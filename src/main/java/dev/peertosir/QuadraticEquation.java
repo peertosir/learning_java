@@ -5,6 +5,10 @@ import java.util.Scanner;
 
 public class QuadraticEquation {
     public static void main(String[] args) {
+        getSolutionOfQuadraticEquation();
+    }
+
+    public static void getSolutionOfQuadraticEquation(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Программа решает квадратное уравнение вида:");
         System.out.println("ax^2 + bx + c = 0");

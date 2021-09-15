@@ -4,11 +4,18 @@ import java.util.Scanner;
 
 public class SecondsConverter {
     public static void main(String[] args) {
+        convertSeconds(getSeconds());
+
+    }
+
+    public static int getSeconds(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Программа конвертирует скунды в месяцы/недели/дни/часы/минуты/секунды");
         System.out.println("Введите количество секунд:"); //2149200
-        int seconds = scanner.nextInt();
+        return scanner.nextInt();
+    }
 
+    public static void convertSeconds(int seconds) {
         double minutes = seconds / 60;
         double hours = minutes / 60;
         double days = hours / 24;
