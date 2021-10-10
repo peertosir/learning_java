@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class QuadraticEq {
     public static void main(String[] args) throws Exception {
-        Scanner enterInt = new Scanner(System.in);
         Scanner scr = new Scanner(System.in);
         String str = "";
         int a, b, c, d;
@@ -13,11 +12,11 @@ public class QuadraticEq {
         try {
             do {
                 System.out.print("a = ");
-                a = enterInt.nextInt();
+                a = scr.nextInt();
                 System.out.print("b = ");
-                b = enterInt.nextInt();
+                b = scr.nextInt();
                 System.out.print("c = ");
-                c = enterInt.nextInt();
+                c = scr.nextInt();
                 System.out.println("Квадратное уравнение: " + "\n" + a + "x^2 + " + b + "x + " + c + " = 0");
                 d = b * b - 4 * a * c;
                 if (d > 0) {
@@ -33,6 +32,8 @@ public class QuadraticEq {
                     System.out.println("Корней нет");
                 }
                 System.out.println("Продолжить ввод? y/n");
+                scr.reset();
+                scr = new Scanner(System.in);
                 str = scr.nextLine();
                 if (str.equals("y")) {
                     exit = true;

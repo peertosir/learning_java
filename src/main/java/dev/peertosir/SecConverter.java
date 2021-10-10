@@ -6,22 +6,36 @@ import java.util.Scanner;
 
 public class SecConverter {
     public static void main(String[] args) throws Exception {
-        Scanner scr1 = new Scanner(System.in);
-        Scanner scr2 = new Scanner(System.in);
-        double X;
+        Scanner scr = new Scanner(System.in);
+        long X;
         boolean exit = true;
         String str = "";
-        DecimalFormat df = new DecimalFormat("#.00");
         try {
             do {
                 System.out.println("Введите количество секунд:");
-                X = scr1.nextDouble();
-                System.out.println(X + " secs -> " + df.format(X / 18144000) +
-                        " months " + df.format(X / 604800) + " weeks " + df.format(X / 86400) +
-                        " days " + df.format(X / 3600) + " hours " + df.format(X / 60) + " minutes " +
-                        X + " seconds");
+                X = scr.nextLong();
+                if (X >= 0) {
+                    if (X / 60 > 0) {
+                        if (X / 3600 > 0) {
+                            if (X / 86400 > 0) {
+                                if (X / 604800 > 0) {
+                                    if (X / 18144000 > 0) {
+                                        System.out.print(X / 18144000 + " months ");
+                                    }
+                                    System.out.print(X / 604800 + " weeks ");
+                                }
+                                System.out.print(X / 86400 + " days ");
+                            }
+                            System.out.print(X / 3600 + " hours ");
+                        }
+                        System.out.print(X / 60 + " minutes ");
+                    }
+                    System.out.println(X + " seconds");
+                }
                 System.out.println("Продолжить ввод? y/n");
-                str = scr2.nextLine();
+                scr.reset();
+                scr = new Scanner(System.in);
+                str = scr.nextLine();
                 if (str.equals("y")) {
                     exit = true;
                 } else if (str.equals("n")) {
