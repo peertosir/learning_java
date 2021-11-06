@@ -19,7 +19,7 @@ public class SpamFiltre {
                 String[] words = str.split("\\W+");
                 for (String word : words) {
                     for (String s : blackList) {
-                        if (word.toLowerCase(Locale.ROOT).equals(s)) {
+                        if (word.equalsIgnoreCase(s)) {
                             System.out.println(word + " - слово из черного списка!");
                         }
                     }
